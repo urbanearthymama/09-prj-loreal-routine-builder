@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,13 +15,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body id="mainBody">
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
         <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
         <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
       </header>
+
+      <!-- RTL/LTR Toggle Button -->
+      <button
+        id="toggleDirectionBtn"
+        style="display:none"
+      >
+        Switch RTL/LTR
+      </button>
 
       <!-- Category Filter -->
       <div class="search-section">
@@ -37,6 +45,20 @@
           <option value="suncare">Suncare</option>
           <option value="fragrance">Fragrance</option>
         </select>
+        <!-- New: Product search field -->
+        <input
+          type="text"
+          id="productSearch"
+          placeholder="Search products by name or keyword…"
+          style="
+            margin-left: 16px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1.5px solid #e3a535;
+            width: 260px;
+          "
+        />
       </div>
 
       <!-- Products Grid -->
@@ -87,6 +109,19 @@
 
     <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
     <script src="secrets.js"></script>
+    <script src="cloudworker.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+        </nav>
+      </footer>
+    </div>
+
+    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
+    <script src="secrets.js"></script>
+    <script src="cloudworker.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -13,72 +13,118 @@ body {
   justify-content: center;
 }
 
-.page-wrapper {
-  width: 90%;
-  max-width: 900px;
-}
 
-/* header */
-.site-header {
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 10px;
-}
-
-.logo {
-  width: 250px;
-  margin-bottom: 15px;
-}
-
-.site-title {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-/* category filter */
-.search-section {
-  margin: 30px 0;
-  display: flex;
-}
-
-.search-section select {
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  border: 2px solid #000;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: white;
-  font-weight: 500;
-}
-
-.search-section select:focus {
-  outline: none;
-  border-color: #666;
-}
-
-/* chat section */
+/* —— Chatbox with L'Oréal Brand Colors —— */
 .chatbox {
   margin: 40px 0;
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 26px;
+  border: 1px solid #ff003b;
+  border-radius: 16px;
+  padding: 32px 28px 28px 28px;
+  background: linear-gradient(135deg, #fff 70%, #e3a53518 100%);
+  box-shadow: 0 4px 32px 0 #ff003b22, 0 1.5px 0 #e3a53544;
+  transition: box-shadow 0.3s;
 }
-
+.site-header {
 .chatbox h2 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 20px;
+  color: #ff003b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .chat-window {
-  padding: 20px;
+  padding: 22px 18px;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.6;
   height: 250px;
   overflow-y: auto;
-  background: #fafafa;
+  background: linear-gradient(120deg, #fff 80%, #e3a53522 100%);
   margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1.5px solid #e3a535;
+  box-shadow: 0 2px 12px 0 #ff003b11;
+  color: #222;
+  transition: border 0.3s;
+}
+}
+.chat-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 13px 14px;
+  font-size: 18px;
+  border: 2px solid #e3a535;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  transition: border 0.3s;
+  box-shadow: 0 1px 6px 0 #e3a53522;
+}
+  background-color: white;
+.chat-form input:focus {
+  outline: none;
+  border-color: #ff003b;
+}
+  outline: none;
+
+.chat-form button {
+  font-size: 20px;
+  background: linear-gradient(90deg, #ff003b 60%, #e3a535 100%);
+  color: #fff;
+  border: none;
+  padding: 0 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px 0 #ff003b33;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+}
+
+.chat-form button:hover {
+  background: linear-gradient(90deg, #e3a535 0%, #ff003b 100%);
+  box-shadow: 0 4px 16px 0 #ff003b44;
+}
+  font-size: 18px;
+
+.chat-form button:focus {
+  outline: 2px solid #ff003b;
+  outline-offset: 2px;
+}
+  margin-bottom: 20px;
+/* Chat message bubbles (optional, for future use) */
+.chat-message {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  font-size: 17px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 1px 4px 0 #e3a53522;
+}
+.chat-message.user {
+  background: linear-gradient(90deg, #ff003b 80%, #e3a535 100%);
+  color: #fff;
+  align-self: flex-end;
+}
+.chat-message.bot {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #e3a535;
+  align-self: flex-start;
+}
 }
 
 /* placeholder message */
@@ -178,14 +224,120 @@ body {
   margin: 30px 0;
 }
 
+
+
 .product-card {
   flex: 0 1 calc(33.333% - 14px);
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   gap: 15px;
   min-height: 160px;
+  background: #fff;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 6px 0 #e3a53511;
+  position: relative;
+}
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 110px;
+  position: relative;
+}
+
+/* Description toggle button */
+.desc-toggle {
+  margin-top: 8px;
+  background: #e3a535;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  box-shadow: 0 1px 4px 0 #e3a53522;
+}
+.desc-toggle:hover, .desc-toggle[aria-expanded="true"] {
+  background: #ff003b;
+  color: #fff;
+}
+
+/* Product description (expandable) */
+.product-desc {
+  display: none;
+  background: #fffbe7;
+  color: #222;
+  border: 1px solid #e3a535;
+  border-radius: 6px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px 0 #e3a53522;
+  z-index: 2;
+  position: relative;
+}
+.product-desc.open {
+  display: block;
+  animation: fadeInDesc 0.2s;
+}
+@keyframes fadeInDesc {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card.selected {
+  border: 2.5px solid #ff003b;
+  box-shadow: 0 2px 16px 0 #ff003b33, 0 0 0 2px #e3a53555;
+  background: linear-gradient(120deg, #fff 80%, #e3a53522 100%);
+}
+#selectedProductsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.selected-product-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1.5px solid #e3a535;
+  border-radius: 8px;
+  padding: 6px 12px 6px 6px;
+  box-shadow: 0 1px 6px 0 #e3a53522;
+  margin-bottom: 4px;
+  font-size: 15px;
+  position: relative;
+}
+.selected-product-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+.selected-product-item button.remove-selected {
+  background: none;
+  border: none;
+  color: #ff003b;
+  font-size: 18px;
+  margin-left: 4px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+.selected-product-item button.remove-selected:hover {
+  background: #ff003b11;
+  color: #e3a535;
 }
 
 .product-card img {
@@ -252,4 +404,75 @@ body {
 
 .generate-btn i {
   margin-right: 8px;
+}
+
+/* RTL support: flip layout and alignments when in RTL mode */
+html[dir="rtl"] body,
+html[dir="rtl"] .page-wrapper {
+  direction: rtl;
+}
+
+html[dir="rtl"] .site-header,
+html[dir="rtl"] .selected-products,
+html[dir="rtl"] .products-grid,
+html[dir="rtl"] .chatbox,
+html[dir="rtl"] .chat-form,
+html[dir="rtl"] .site-footer,
+html[dir="rtl"] .search-section {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .products-grid {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .product-card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+html[dir="rtl"] .product-info {
+  align-items: flex-end;
+}
+
+html[dir="rtl"] .selected-product-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+html[dir="rtl"] .selected-product-item img {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .selected-product-item button.remove-selected {
+  margin-right: 4px;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .chat-window,
+html[dir="rtl"] .chat-message {
+  text-align: right;
+}
+
+html[dir="rtl"] .chat-message.user {
+  align-self: flex-start;
+}
+
+html[dir="rtl"] .chat-message.bot {
+  align-self: flex-end;
+}
+
+html[dir="rtl"] .chat-form {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .site-footer nav {
+  direction: rtl;
+}
+
+html[dir="rtl"] .site-footer a {
+  margin-left: 8px;
+  margin-right: 0;
 }
